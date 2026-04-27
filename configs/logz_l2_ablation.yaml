@@ -1,0 +1,30 @@
+seed: 0
+device: cuda
+
+output_dir: ablation_runs/logz_l2
+
+data_dir: ./data
+batch_size: 512
+num_workers: 2
+
+margin_c: 0.05
+prior_std: 0.05
+
+# Either a number, e.g. 10.0, or "checkpoint"
+lambda_l2: checkpoint
+checkpoint_path: runs/20260426_084857_fmnist/checkpoint.pt
+
+num_lambdas: 25
+
+# abs_normal, exponential, sparse_abs_normal
+lambda_sampling: abs_normal
+sparse_k: 3000
+
+max_prior_samples: 128
+prior_sample_counts:
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128

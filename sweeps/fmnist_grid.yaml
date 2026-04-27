@@ -1,0 +1,28 @@
+program: fmnist.py
+method: grid
+
+project: maxent-feasible-fmnist
+name: fmnist_maxent_grid
+
+metric:
+  name: epoch/test_acc
+  goal: maximize
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - --config
+  - configs/fmnist_maxent.yaml
+
+parameters:
+  sgld_lr:
+    values: [1.0e-6, 5.0e-7]
+  margin_c:
+    values: [0.05, 0.1]
+  fixed_lambda_epochs:
+      values: [3, 10]
+  fixed_lambda_lr:
+      values: [1.0e-7, 3.0e-8]
+  fixed_lambda_noise_scale:
+      values: [0.001, 0.0]

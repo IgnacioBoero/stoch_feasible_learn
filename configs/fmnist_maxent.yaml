@@ -1,0 +1,66 @@
+# configs/fmnist.yaml
+
+run_name: fmnist
+output_dir: runs
+
+data_dir: ./data
+device: cuda
+seed: 0
+
+epochs: 50
+batch_size: 256
+
+# Feasibility loss: ell_i(theta) = [gamma - margin_i(theta)]_+
+margin_c: 0.1
+
+# Prior P0 = N(0, prior_std^2 I)
+prior_std: 0.05
+
+# SGLD
+sgld_lr: 1.0e-6
+noise_scale: 0.0
+
+# Dual update
+
+lambda_lr: 1.0e-2
+dual_lr_schedule: constant
+min_lambda_lr: 1.0e-4
+dual_damping: 0.0
+dual_update_fraction: 0.1
+lambda_max: 100.0
+
+# PAC-Bayes / logZ estimate
+delta: 0.05
+logz_prior_samples: 2
+
+# W&B
+wandb_enabled: true
+wandb_project: maxent-feasible-fmnist
+wandb_entity:
+wandb_group: debug
+wandb_mode: online
+wandb_tags:
+  - fmnist
+  - maxent
+  - feasible-learning
+  - sgld
+  
+# Data loading
+num_workers: 2
+
+
+# Stabilization
+lambda_lr_ref: 0.0
+min_primal_lr_factor: 0.05
+grad_clip_norm: -1.0
+dual_damping: 0.5
+
+primal_lr_schedule: cosine
+min_sgld_lr: 0.0
+warmup_steps: 0
+
+# Optional fixed-lambda phase after primal-dual training
+fixed_lambda_epochs: 0
+fixed_lambda_lr: 1.0e-7
+fixed_lambda_noise_scale: 0.001
+fixed_lambda_grad_clip_norm: -1.0

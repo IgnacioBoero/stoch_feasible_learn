@@ -1,0 +1,44 @@
+seed: 0
+device: cuda
+
+output_dir: ablation_runs/fixed_beta1_active
+
+checkpoint_path: runs/20260426_084857_fmnist/checkpoint.pt
+
+batch_size: 256
+eval_batch_size: 512
+num_workers: 2
+
+active_lambda_threshold: 0.0
+active_top_k:
+
+num_prior_chains: 5
+
+# Only beta = 1
+mode: fixed_beta1
+train_at_beta_zero: true
+
+# Now this controls total training steps per chain
+steps_per_beta: 40000
+
+eval_samples_per_beta: 10
+steps_between_eval_samples: 200
+
+log_train_step_every: 10
+
+sgld_lr: 1.0e-6
+min_sgld_lr: 0.0
+warmup_steps: 0
+
+noise_scale: 0.001
+grad_clip_norm: -1
+
+wandb_enabled: true
+wandb_project: maxent-feasible-fmnist
+wandb_entity:
+wandb_group:
+wandb_mode: online
+wandb_tags:
+  - fixed-beta1
+  - active-set
+  - fixed-lambda

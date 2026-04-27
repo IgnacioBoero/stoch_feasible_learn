@@ -1,0 +1,21 @@
+seed: 0
+device: cuda
+
+output_dir: ablation_runs/logz_shuffle
+
+checkpoint_path: runs/20260426_084857_fmnist/checkpoint.pt
+
+# Number of shuffled versions of the trained lambda
+num_shuffles: 25
+
+# Compute all prior samples once, then evaluate prefixes
+max_prior_samples: 256
+
+prior_sample_counts:
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128
+  - 256

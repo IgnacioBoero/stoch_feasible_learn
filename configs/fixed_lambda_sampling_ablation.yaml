@@ -1,0 +1,35 @@
+seed: 0
+device: cuda
+
+output_dir: ablation_runs/fixed_lambda_sampling
+
+checkpoint_path: runs/20260426_084857_fmnist/checkpoint.pt
+
+data_dir: ./data
+batch_size: 256
+eval_batch_size: 512
+num_workers: 2
+
+margin_c: 0.05
+prior_std: 0.05
+
+# Fixed-lambda SGLD/GD from P0
+num_chains: 5
+num_epochs: 20
+
+sgld_lr: 1.0e-6
+noise_scale: 0.001
+grad_clip_norm: -1
+
+# Sampling schedule
+burnin_steps: 1000
+sample_every_steps: 500
+max_saved_samples: 3
+
+# Active set selection for fixed-lambda training
+# Train only on i with lambda_i > active_lambda_threshold.
+active_lambda_threshold: 0.0
+
+# If set, overrides threshold and trains only on top-k lambdas.
+# active_top_k: 5000
+active_top_k:
