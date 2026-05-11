@@ -1,0 +1,50 @@
+[
+  {
+    "path": "runs/20260427_010400_fmnist/final_results.json",
+    "test_error": 0.09290000051259995,
+    "train_error": 0.04743333160877228,
+    "pac_bayes_error_bound": 0.11465033608410985
+  },
+  {
+    "path": "runs/20260426_084857_fmnist/final_results.json",
+    "test_error": 0.09309999999999996,
+    "train_error": 0.0285333333333333,
+    "pac_bayes_error_bound": 0.16966704043605732
+  },
+  {
+    "path": "runs/20260426_211259_fmnist/final_results.json",
+    "test_error": 0.09399999678134918,
+    "train_error": 0.04921666532754898,
+    "pac_bayes_error_bound": 0.10435192792535758
+  },
+  {
+    "path": "runs/20260426_055726_fmnist/final_results.json",
+    "test_error": 0.09819999999999995,
+    "train_error": 0.028866666666666707,
+    "pac_bayes_error_bound": 0.17361019917489423
+  },
+  {
+    "path": "runs/20260427_104950_fmnist/final_results.json",
+    "test_error": 0.11159999668598175,
+    "train_error": 0.05951666831970215,
+    "pac_bayes_error_bound": 0.13480597148331533
+  },
+  {
+    "path": "runs/20260427_065342_fmnist/final_results.json",
+    "test_error": 0.11180000007152557,
+    "train_error": 0.05790000036358833,
+    "pac_bayes_error_bound": 0.1291605019225877
+  },
+  {
+    "path": "runs/20260426_230845_fmnist/final_results.json",
+    "test_error": 0.11569999903440475,
+    "train_error": 0.08811666816473007,
+    "pac_bayes_error_bound": 0.21247649962819454
+  },
+  {
+    "path": "runs/20260427_025914_fmnist/final_results.json",
+    "test_error": 0.11840000003576279,
+    "train_error": 0.0887666642665863,
+    "pac_bayes_error_bound": 0.252047752241577
+  }
+]
