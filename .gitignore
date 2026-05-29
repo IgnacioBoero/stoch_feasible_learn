@@ -2,3 +2,5 @@ ablation_runs/*
 data/*
 runs/*
 wandb/*
+.history/*
+__pycache__/*
